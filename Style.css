@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #faf2ff;
+}
+
+body {
+    font-size: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+main {
+    background: #201B2C;
+}
+.About, .Projects, .Experience {
+    visibility: hidden;
+}
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 0.4px solid #faf2ff;
+    background: #201B2C;
+    height: 12vh;
+    z-index: 99;
+    transition: box-shadow 0.8s; /* Adicione uma transição para as propriedades background-color, box-shadow e border-bottom */
+}
+.Navbar.scrolled {
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.8);
+}
+.NavbarImg {
+    height: 40px;
+}
+.NavbarMenu {
+    display: flex;
+    gap: 25px;
+}
+.Navbar a {
+    font-family: 'Sarala', sans-serif;
+    color: #faf2ff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+.NavbarMenu a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: #00FF88;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+.NavbarMenu a:hover::after {
+    width: 100%;
+}
+.Content {
+    margin-bottom: 48px;
+    font-family: 'Sarala', sans-serif;
+}
+.Home {
+    padding-top: 12vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.HomeLeft {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.HomeCard {
+    margin: 4%;
+    width: 80%;
+    flex-direction: column;
+}
+.HomeCard h1 {
+    font-family: 'Righteous', sans-serif;
+    font-weight: 300;
+    font-size: 54px;
+    padding-bottom: 4vh;
+}
+.HomeCard span {
+    color: #00FF88;
+    text-transform: uppercase;
+    font-weight: 5vw;
+    transition: text-shadow 0.8s; text-shadow: none;
+}
+.HomeCard span::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: blink 0.8s infinite;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+.HomeCard span:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0px 0px 16px #00ff8052;
+}
+.HomeCard h2 {
+    font-size: 16px;
+}
+.HomeCard ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    margin-top: 8vh;
+}
+.HomeCard ul li {
+    display: inline-block;
+}
+.HomeCard ul li a img {
+    width: 10vw;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+    transition: width 0.4s, box-shadow 0.4s;
+}
+.HomeCard ul li a img:hover {
+    width: 12vw;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+}
+.HomeRight {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.HomeImg {
+    width: 20px;
+}
+.ScrollDown {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    cursor:default;
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+.ScrollDown.scrolled {
+    opacity: 0;
+}
+.About {
+    margin-top: 12vh;
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.AboutRight {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+.CardAbout {
+    width: 90%;
+    max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #2f2841;
+    border-radius: 30px;
+    box-shadow: 0px 10px 40px #00000056;
+    margin-top: 2vh;
+}
+.CardAbout h1 {
+    font-family: 'Righteous', sans-serif;
+    text-align: center;
+    color: #00FF88;
+    font-size: 3vw;
+    margin-top: 4%;
+    transition: text-shadow 0.8s;
+    text-shadow: none;
+}
+.CardAbout h1:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0px 0px 16px #00ff8052;
+}
+.CardAbout p {
+    text-indent: 2em;
+    text-align: left;
+}
+.AboutText {
+    max-height: 80%;
+    overflow: auto;
+    margin: 2% 8% 6% 8%;
+}
+.AboutLeft {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.AboutLeft img {
+    max-height: 70%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 40px #00000056;
+    margin: 20%;
+}
+.Experience {
+    padding-top: 12vh;
+    width: 100%;
+    min-height: 88vh;
+    display: grid;
+    place-items: center;
+    justify-content: space-evenly;
+}
+.Experience h1 {
+    font-family: 'Righteous', sans-serif;
+    color: #00FF88;
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+    transition: text-shadow 0.8s;
+    text-shadow: none;
+    margin-bottom: 10px;
+}
+.Experience h1:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0px 0px 16px #00ff8052;
+}
+.Experience .SubTitle{
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 80px;
+    text-shadow: 0px 10px 40px #00000056;
+}
+.Xpcontent {
+    width: 70%;
+    height: auto;
+    position: relative;
+}
+.Xpcontent::after {
+    position: absolute;
+    content: ' ';
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #00ff8052, #00FF88);
+}
+.Xpcontent ul {
+    list-style: none;
+}
+.Xpcontent ul li {
+    width: 50%;
+    height: auto;
+    padding: 15px 20px;
+    background-color: #2f2841;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+}
+.Xpcontent ul li p {
+    text-indent: 2em;
+    text-align: left;
+}
+.Xpcontent ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    text-align: right;
+}
+.Xpcontent ul li:nth-child(odd) .date {
+    right: 20px;
+}
+.Xpcontent ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    text-align: left;
+}
+.Xpcontent ul li:nth-child(4) {
+    margin-bottom: 0;
+}
+.Xpcontent ul li .title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #00FF88;
+}
+.Xpcontent ul li .title {
+    font-family: 'Righteous', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #00FF88;
+    transition: text-shadow 0.8s;
+    text-shadow: none;
+}
+.Xpcontent ul li .title:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0px 0px 25px #00ff8052;
+}
+ul li p {
+    font-size: 15px;
+    margin: 7px 0;
+    line-height: 25px;
+}
+ul li .date {
+    font-family: 'Righteous', sans-serif;
+    position: absolute;
+    top: -40px;
+    width: 135px;
+    height: 35px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #00ff8052, #00FF88);
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+}
+.Xpcontent ul li .circle {
+    width: 30px;
+    height: 30px;
+    background-color: #00ff8052;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}
+.Xpcontent ul li .circle::after {
+    content: ' ';
+    width: 15px;
+    height:15px;
+    background-color: #00ff8052;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Xpcontent ul li:nth-child(odd) .circle {
+    right: -30px;
+    transform: translate(50%, -50%);
+}
+.Xpcontent ul li:nth-child(even) .circle {
+    left: -30px;
+    transform: translate(-50%, -50%);
+}
+.XpText {
+    overflow: hidden;
+    max-height: 0;
+    height: auto;
+    transform: translateY(-15px);
+    transition: transform 0.8s, max-height 0.8s, margin-bottom 0.8s;
+    margin-bottom: 0;
+}
+.Xpcontent ul li:hover .XpText {
+    padding-top: 8px;
+    max-height: 60vh;
+    transform: translateY(15px);
+    overflow: auto;
+    margin-bottom: 30px;
+}
+
+
+footer {
+    display: none;
+}
